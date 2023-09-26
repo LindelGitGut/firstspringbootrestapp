@@ -10,11 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController // ist eine Kobination aus @Controller und @ResponeseBody
 public class GreetingController {
 
-
-
     private static String template = "Hello, %s!";
     private static AtomicLong counter = new AtomicLong();
-
 
     // Es wäre hier auch @RequestMapping(method=GET)) möglich, hier kann man auch PUT,POST ETC als Parameter hinterlegen
     @GetMapping("/greeting")
