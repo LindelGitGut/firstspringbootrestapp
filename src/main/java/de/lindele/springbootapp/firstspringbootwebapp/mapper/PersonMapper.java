@@ -26,6 +26,7 @@ public class PersonMapper {
                 .job(person.getJob())
                 .name(person.getName())
                 .age(person.getAge())
+                .id(person.getId())
                 .build();
     }
 
