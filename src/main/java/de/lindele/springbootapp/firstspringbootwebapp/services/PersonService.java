@@ -36,16 +36,17 @@ public class PersonService {
                     personEntityOptional.get().getJob()));
         } else throw new IllegalStateException();
     }
-    //TODO herausfinden warum ID trotz angabe der ID ein Eintrag mit neuer ID generiert wird.
+
     public Person updatePersonByID(Long id, Person person) {
         log.info("Erhaltene ID lautet: "+id);
         var personEntityOptional = repo.findById(id);
         if (personEntityOptional.isPresent()) {
             log.info("Updateperson: Person wurde gefunden!");
             PersonEntity oldpersonentity = personEntityOptional.get();
-            person.setId(id);
-            repo.deleteById(id);
-            var newPersonEntity = repo.save(mapper.map(person));
+            oldpersonentity.setAge(person.getAge());
+            oldpersonentity.setName(person.getName());
+            oldpersonentity.setJob(person.getJob());
+            var newPersonEntity = repo.save(oldpersonentity);
             return mapper.map(newPersonEntity);
         } else throw new IllegalStateException();
     }
