@@ -1,0 +1,16 @@
+server:
+
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/exampledb
+    username: exampleuser
+    password: examplepassword
+  jpa:
+  hibernate:
+  ddl-auto: none
+
+  flyway:
+    url: jdbc:postgresql://localhost:5432/exampledb
+    user: "exampleuser"
+    password: "examplepassword"

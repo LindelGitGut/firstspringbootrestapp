@@ -1,11 +1,10 @@
-package de.lindele.springbootapp.firstspringbootwebapp;
+package de.lindele.springbootapp.firstspringbootwebapp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import de.lindele.springbootapp.firstspringbootwebapp.model.Greeting;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController // ist eine Kobination aus @Controller und @ResponeseBody
@@ -23,4 +22,7 @@ public class GreetingController {
 
         return new Greeting((int) counter.incrementAndGet(),String.format(template, name));
     }
+
+
+
 }

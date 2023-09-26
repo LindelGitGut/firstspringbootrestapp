@@ -1,4 +1,4 @@
-package de.lindele.springbootapp.firstspringbootwebapp;
+package de.lindele.springbootapp.firstspringbootwebapp.model;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

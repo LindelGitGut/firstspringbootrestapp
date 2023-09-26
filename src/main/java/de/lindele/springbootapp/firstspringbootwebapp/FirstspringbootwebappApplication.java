@@ -2,6 +2,7 @@ package de.lindele.springbootapp.firstspringbootwebapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,7 @@ public class FirstspringbootwebappApplication {
 		SpringApplication.run(FirstspringbootwebappApplication.class, args);
 	}
 
-//@Get Mapping ist dafür da das eben urls für bestimmte aufrufe reserviert/hintelegt werden können, hier am beispiel hello
+//@Get Mapping ist dafür da das eben urls für bestimmte Aufrufe reserviert/hintelegt werden können, hier am beispiel hello
 	@GetMapping("/hello")
 	// den get-request können wir nun innerhalb der hello funktion noch parameter übergeben, hier beispielsweise mit name und age
 	// somit können die parameter im browserabruf übergeben werden
@@ -34,7 +35,6 @@ public class FirstspringbootwebappApplication {
 						@RequestParam(value =  "age", defaultValue = "i dont know how many") String age) {
 		return String.format("Hello %s!\n You Are %s years old", name, age);
 }
-
 
 
 }
